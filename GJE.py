@@ -1,4 +1,4 @@
-#Python equivalent the Rust version was transpiled from
+#Python equivalent the Rust version was transcoded from by me
 
 import numpy as np
 
