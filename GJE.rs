@@ -8,24 +8,24 @@ fn main () {
     }
     
     for c in 0..m.len() {
-	    if m[c][c] != 1.0 {
+        let row_divider = m[c][c];
+	    if row_divider != 1.0 {
 		    for e in 0..m[c].len() {
-		        m[c][e] = m[c][e] / m[c][c];
+		        m[c][e] = m[c][e] / row_divider;
 		    }
 	    }
         for r in 0..m.len() {
+        let row_subtraction_multiplier = m[r][c];
     		if r != c {
-			for e in 0..m[r].len() {
-			    m[r][e] -= m[c][e] * m[r][c]
-			}
+    			for e in 0..m[r].len() {
+    			    m[r][e] -= m[c][e] * row_subtraction_multiplier
+    			}
         	}
         }
     }
     
-    for element in m {
-        for element_ in element {
-            print!("{}", element_);
-        }
-        print!("\n");
+    let last_index = m[0].len()-1;
+    for i in 0..m[0].len() {
+        println!("{}", m[i][last_index])
     }
 }
